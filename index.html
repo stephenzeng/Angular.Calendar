@@ -13,7 +13,7 @@
         <div class="panel-heading">
             <div class="row" style="margin: 0;">
                 <div class="pull-left">
-                    <span>{{currentDate | date:'MMMM, yyyy'}}</span>
+                    <span style="font-size: 1.25em;">{{currentDate | date:'MMMM, yyyy'}}</span>
                 </div>
                 <div class="pull-right">
                     <button class="btn btn-default" ng-click="addEvent()" title="Add event">Add event</button>
@@ -22,8 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="panel-body">
-            <div class="table-responsive">
+        <div class="panel-body table-responsive">
                 <table class="table table-bordered table-calendar">
                     <thead>
                     <tr>
@@ -51,7 +50,6 @@
                     </tr>
                     </tbody>
                 </table>
-            </div>
         </div>
     </div>
 </div>
