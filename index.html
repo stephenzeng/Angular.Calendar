@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="calendarApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/site.css" rel="stylesheet"/>
+</head>
+<body ng-controller="calendarController">
+
+<div class="site-content">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <button class="btn btn-default" ng-click="setToPreviousMonth()"> < </button>
+            <button class="btn btn-default" ng-click="setToNextMonth()"> > </button>
+            <span>{{currentDate | date:'MMMM, yyyy'}}</span>
+        </div>
+        <div class="panel-body table-responsive">
+            <table class="table table-bordered table-calendar">
+                <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="week in getCalendarDates()">
+                    <td ng-repeat="date in week"
+                        ng-class="{'calendar-today': isToday(date), 'calendar-gray': !isCurrentMonth(date)}">
+                        <div>
+                            <span style="font-size: 200%;font-weight: bold;">{{date | date:'d'}}</span>
+                            <small>{{date | date:'MMM'}}</small>
+                        </div>
+                        <div style="margin-top: 5px;" ng-hide="true">
+                            <a href="#" class="label label-default calendar-event">18:30 Victoria Park Toast</a>
+                            <a href="#" class="label label-info calendar-event">18:30 Victoria Park Toast</a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="js/vendor/jquery-2.1.1.js"></script>
+<script src="js/vendor/bootstrap.js"></script>
+<script src="js/vendor/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/calendarController.js"></script>
+</body>
+</html>
