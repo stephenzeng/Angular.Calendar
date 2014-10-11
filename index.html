@@ -16,8 +16,9 @@
                     <span>{{currentDate | date:'MMMM, yyyy'}}</span>
                 </div>
                 <div class="pull-right">
-                    <button class="btn btn-default" ng-click="setToPreviousMonth()"> <</button>
-                    <button class="btn btn-default" ng-click="setToNextMonth()"> ></button>
+                    <button class="btn btn-default" ng-click="addEvent()" title="Add event">Add event</button>
+                    <button class="btn btn-default" ng-click="setToPreviousMonth()" title="Previous month"> < </button>
+                    <button class="btn btn-default" ng-click="setToNextMonth()" title="Next month"> > </button>
                 </div>
             </div>
         </div>
