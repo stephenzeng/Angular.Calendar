@@ -1,0 +1,16 @@
+{
+    "name": "Angular.Calendar",
+    "description": "A AngularJS Calendar",
+    "author": "Stephen Zeng <zeng.stephen@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "karma": "^0.12.24",
+        "karma-cli": "0.0.4",
+        "karma-jasmine": "^0.1.5",
+        "karma-phantomjs-launcher": "^0.1.4"
+    },
+    "repository": "https://github.com/stephenzeng/Angular.Calendar.git",
+    "scripts": {
+        "test": "karma start --single-run"
+    }
+}
