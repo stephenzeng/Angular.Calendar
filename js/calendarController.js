@@ -4,15 +4,7 @@
 'use strict'
 
 angular.module('calendarApp').controller('calendarController', function ($scope) {
-    var weeks = [
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
-    ];
-
+    var weeks = [[],[],[],[],[],[]];
     $scope.currentDate = new Date();
 
     $scope.getCalendarDates = function () {
