@@ -3,8 +3,15 @@
  */
 'use strict'
 
-angular.module('calendarApp').controller('calendarController', function ($scope) {
+angular.module('calendarApp').controller('calendarController', function ($scope, $log) {
     var weeks = [[],[],[],[],[],[]];
+    var events = [
+        {"id":1, "datetime":new Date(2014,10,1).toJSON(), "desc":"Another test event in Vic park" },
+        {"id":2, "datetime":new Date(2014,10,4).toJSON(), "desc":"Another test event in Vic park" },
+        {"id":3, "datetime":new Date(2014,9,6).toJSON(), "desc":"Another test event in Vic park" },
+        {"id":4, "datetime":new Date(2014,9,10).toJSON(), "desc":"Another test event in Vic park" }
+    ];
+
     $scope.currentDate = new Date();
 
     $scope.getCalendarDates = function () {
@@ -40,6 +47,16 @@ angular.module('calendarApp').controller('calendarController', function ($scope)
         var inputDate = new Date(date);
         return inputDate.getFullYear() == $scope.currentDate.getFullYear()
             && inputDate.getMonth() == $scope.currentDate.getMonth();
+    }
+
+    $scope.getEvents = function(date){
+        return events.filter(function(event){
+            return new Date(date).toLocaleDateString() == new Date(event.datetime).toLocaleDateString();
+        })
+    }
+
+    $scope.addEvent = function(){
+        events.push({"id":5, "datetime":new Date(2014,9,12).toJSON(), "desc":"test event" });
     }
 
     var getFirstCalendarDate = function (year, month) {

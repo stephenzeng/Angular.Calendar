@@ -11,6 +11,7 @@ body {
 }
 
 .table-calendar {
+    table-layout: fixed;
 }
 
 .table-calendar > tbody > tr > td {
@@ -19,12 +20,14 @@ body {
 }
 
 .calendar-event {
-    width: 140px;
-    display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
+    font-size: small;
+    padding: 1px;
+    border: 0;
+
 }
 
 .calendar-today {
@@ -34,3 +37,24 @@ body {
 .calendar-gray {
     color: #ccc;
 }
+
+.calendar-date {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.event-group {
+    margin-top: 10px;
+}
+.event-group-item {
+    position: relative;
+    display: block;
+    /*margin-bottom: 1px;*/
+    /*background-color: #aaa;*/
+    /*font-size: 75%;*/
+    /*font-weight: bold;*/
+    /*color: #ffffff;*/
+    /*border-radius: .25em;*/
+    /*padding-left: .25em;*/
+}
+
