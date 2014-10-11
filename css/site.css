@@ -27,10 +27,10 @@ body {
     -o-text-overflow: ellipsis;
 }
 
-.calendar-today{
+.calendar-today {
     background: #faf2cc;
 }
 
-.calendar-gray{
+.calendar-gray {
     color: #ccc;
 }

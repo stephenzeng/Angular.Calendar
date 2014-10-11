@@ -11,9 +11,15 @@
 <div class="site-content">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <button class="btn btn-default" ng-click="setToPreviousMonth()"> < </button>
-            <button class="btn btn-default" ng-click="setToNextMonth()"> > </button>
-            <span>{{currentDate | date:'MMMM, yyyy'}}</span>
+            <div class="row" style="margin: 0;">
+                <div class="pull-left">
+                    <span>{{currentDate | date:'MMMM, yyyy'}}</span>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-default" ng-click="setToPreviousMonth()"> <</button>
+                    <button class="btn btn-default" ng-click="setToNextMonth()"> ></button>
+                </div>
+            </div>
         </div>
         <div class="panel-body table-responsive">
             <table class="table table-bordered table-calendar">
