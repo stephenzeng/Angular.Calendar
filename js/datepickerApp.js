@@ -8,7 +8,7 @@ datepickerApp.controller('datepickerController', function ($scope, $log) {
     $scope.reset = function () {
         $scope.selectedDatetime = moment();
         $scope.selectedDate = $scope.selectedDatetime.format('DD/MM/YYYY')
-        $scope.selectedTime = $scope.selectedDatetime.format('HH:mm');
+        $scope.selectedTime = $scope.selectedDatetime.format('h:mm A');
     }
 
     $scope.reset();
@@ -16,7 +16,7 @@ datepickerApp.controller('datepickerController', function ($scope, $log) {
     $scope.datetimeChange = function () {
         var date = $scope.selectedDate + ' ' + $scope.selectedTime;
         $log.info(date);
-        $scope.selectedDatetime = moment(date, 'DD/MM/YYYY HH:mm');
+        $scope.selectedDatetime = moment(date, 'DD/MM/YYYY h:mm A');
     }
 });
 
@@ -27,9 +27,9 @@ datepickerApp
             link: function (scope, element) {
                 element.timepicker({
                     scrollbar: true,
-                    timeFormat: 'HH:mm',
+                    //timeFormat: 'HH:mm',
                     change: function (time) {
-                        scope.selectedTime = moment(time).format('HH:mm');
+                        scope.selectedTime = moment(time).format('h:mm A');
                         console.log(time);
                         scope.datetimeChange();
                         scope.$apply();
