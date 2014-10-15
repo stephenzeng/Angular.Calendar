@@ -16,20 +16,19 @@
             <button type="button" class="btn btn-default" ng-click="reset()">Set to current date and time</button>
         </div>
         <div class="panel-body">
-            <div class="form-horizontal" role="form" style="margin-bottom: 50px;">
+            <div class="form-horizontal" role="form">
                 <div class="form-group">
                     <label class="col-sm-1 control-label">Date</label>
-
                     <div class="col-sm-2">
-                        <input type="text" class="form-control datepicker" id="inputDateFrom">
+                        <input type="text" class="form-control datepicker" id="inputDateFrom" ng-model="selectedDate" ng-change="dateChange()">
                     </div>
                     <div class="col-sm-2">
-                        <input type="text" class="form-control timepicker" id="inputFromTime">
+                        <input type="text" class="form-control timepicker" id="inputFromTime" ng-model="selectedTime">
                     </div>
                 </div>
             </div>
-            <div class="alert alert-info" role="alert">
-                <p>You have selected the date and time <strong>{{selectedDatetime | date:'dd/MM/yyyy HH:mm:ss'}}</strong>.</p>
+            <div class="alert alert-info" role="alert"  style="margin-top: 50px;">
+                <p>You have selected the date and time <strong>{{selectedDatetime.format('LLL')}}</strong>.</p>
             </div>
         </div>
     </div>
@@ -41,6 +40,7 @@
 <script src="js/vendor/bootstrap-datepicker.js"></script>
 <script src="js/vendor/angular.js"></script>
 <script src="js/datepickerApp.js"></script>
+<script src="node_modules/moment/moment.js"></script>
 
 </body>
 </html>
