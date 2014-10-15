@@ -18,7 +18,7 @@
                     <span style="font-size: 1.25em;">{{currentDate | date:'MMMM, yyyy'}}</span>
                 </div>
                 <div class="pull-right">
-                    <button class="btn btn-default" data-toggle="modal" data-target="#myModal" title="Add event">Add event</button>
+                    <button class="btn btn-default" data-toggle="modal" data-target="#myModal" title="Add event" ng-click="newEvent()">Add event</button>
                     <button class="btn btn-default" ng-click="setToPreviousMonth()" title="Previous month"> <</button>
                     <button class="btn btn-default" ng-click="setToNextMonth()" title="Next month"> ></button>
                 </div>
@@ -68,38 +68,43 @@
                     <div class="form-group">
                         <label for="inputTitle" class="col-sm-2 control-label">Title</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+                            <input type="text" class="form-control" id="inputTitle" placeholder="Title" ng-model="event.title">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputDate" class="col-sm-2 control-label">Date time</label>
+                        <label class="col-sm-2 control-label">Date time</label>
+                        <label for="inputDateFrom" class="col-sm-1 control-label">From</label>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control datepicker" id="inputDate" placeholder="DD/MM/YYYY">
+                            <input type="text" class="form-control datepicker" id="inputDateFrom" placeholder="DD/MM/YYYY" ng-model="event.dateFrom">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control timepicker" id="inputFromTime" placeholder="From">
+                            <input type="text" class="form-control timepicker" id="inputFromTime" ng-model="event.timeFrom">
+                        </div>
+                        <label for="inputDateTo" class="col-sm-1 control-label">To</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control datepicker" id="inputDateTo" placeholder="DD/MM/YYYY" ng-model="event.dateTo">
                         </div>
                         <div class="col-sm-2">
-                            <input type="text" class="form-control timepicker" id="inputToTime" placeholder="To">
+                            <input type="text" class="form-control timepicker" id="inputToTime" ng-model="event.timeTo">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputLocation" class="col-sm-2 control-label">Location</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputLocation" placeholder="Location">
+                            <input type="text" class="form-control" id="inputLocation" placeholder="Location" ng-model="event.location">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputDescription" class="col-sm-2 control-label">Description</label>
                         <div class="col-sm-10">
-                            <textarea rows="4" class="form-control" id="inputDescription" placeholder="Description"></textarea>
+                            <textarea rows="4" class="form-control" id="inputDescription" placeholder="Description" ng-model="event.desc"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" ng-click="addEvent()">Save changes</button>
             </div>
         </div>
     </div>

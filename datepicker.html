@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="datepickerApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/datepicker.css"/>
+    <link rel="stylesheet" href="css/jquery.timepicker.css"/>
+    <link rel="stylesheet" href="css/site.css"/>
+</head>
+<body ng-controller="datepickerController">
+
+<div class="site-content">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <button type="button" class="btn btn-default" ng-click="reset()">Set to current date and time</button>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal" role="form" style="margin-bottom: 50px;">
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">Date</label>
+
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control datepicker" id="inputDateFrom">
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control timepicker" id="inputFromTime">
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-info" role="alert">
+                <p>You have selected the date and time <strong>{{selectedDatetime | date:'dd/MM/yyyy HH:mm:ss'}}</strong>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/vendor/jquery-2.1.1.js"></script>
+<script src="js/vendor/jquery.timepicker.js"></script>
+<script src="js/vendor/bootstrap.js"></script>
+<script src="js/vendor/bootstrap-datepicker.js"></script>
+<script src="js/vendor/angular.js"></script>
+<script src="js/datepickerApp.js"></script>
+
+</body>
+</html>
