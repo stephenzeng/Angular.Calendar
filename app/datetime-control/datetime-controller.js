@@ -5,6 +5,10 @@
 
 var myDatetimePickerApp = angular.module('myDatetimePickerApp', []);
 
+myDatetimePickerApp.controller('testCtr', function ($scope, $log) {
+    $scope.selectedDatetime = moment();
+})
+
 myDatetimePickerApp.controller('myDatetimePickerCtr', function ($scope, $log) {
     $scope.selectedDatetime = moment();
     $scope.selectedDate = $scope.selectedDatetime.format('DD/MM/YYYY')
@@ -58,8 +62,10 @@ myDatetimePickerApp
     .directive('myDatetimePicker', function () {
         return{
             restrict: 'E',
-            scope:true,
+            scope: {
+                selectedDatetime:'=ngModel'
+            },
             templateUrl: './app/datetime-control/datetime.tmp.html',
-            controller:'myDatetimePickerCtr'
+            controller: 'myDatetimePickerCtr'
         }
     })

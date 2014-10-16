@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/jquery.timepicker.css"/>
     <link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body ng-controller="testCtr">
 
 <div class="site-content">
     <div class="panel panel-default">
@@ -16,8 +16,8 @@
             Angular Datetime Picker
         </div>
         <div class="panel-body">
-            <div class="col-xs-4">
-                <my-datetime-picker></my-datetime-picker>
+            <div class="col-xs-3">
+                <my-datetime-picker ng-model="selectedDatetime"></my-datetime-picker>
             </div>
 
             <div class="alert alert-info" role="alert" style="margin-top: 50px;">
