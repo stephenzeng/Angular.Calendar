@@ -2,7 +2,7 @@
  * Created by STEPHEN on 10/9/2014.
  */
 'use strict'
-var datepickerApp = angular.module('datepickerApp', []);
+var datepickerApp = angular.module('myDatetimePickerApp', []);
 
 datepickerApp.controller('datepickerController', function ($scope, $log) {
     $scope.reset = function () {

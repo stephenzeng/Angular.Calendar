@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="datepickerApp">
+<html ng-app="myDatetimePickerApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -8,26 +8,19 @@
     <link rel="stylesheet" href="css/jquery.timepicker.css"/>
     <link rel="stylesheet" href="css/site.css"/>
 </head>
-<body ng-controller="datepickerController">
+<body>
 
 <div class="site-content">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <button type="button" class="btn btn-default" ng-click="reset()">Set to current date and time</button>
+            Angular Datetime Picker
         </div>
         <div class="panel-body">
-            <div class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="col-sm-1 control-label">Date</label>
-                    <div class="col-sm-2">
-                        <input type="text" class="form-control datepicker" id="inputDateFrom" ng-model="selectedDate" ng-change="datetimeChange()" my-datepicker>
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="text" class="form-control timepicker" id="inputFromTime" ng-model="selectedTime" my-timepicker>
-                    </div>
-                </div>
+            <div class="col-xs-4">
+                <my-datetime-picker></my-datetime-picker>
             </div>
-            <div class="alert alert-info" role="alert"  style="margin-top: 50px;">
+
+            <div class="alert alert-info" role="alert" style="margin-top: 50px;">
                 <p>You have selected the date and time <strong>{{selectedDatetime.format('LLL')}}</strong>.</p>
             </div>
         </div>
@@ -39,7 +32,7 @@
 <script src="js/vendor/bootstrap.js"></script>
 <script src="js/vendor/bootstrap-datepicker.js"></script>
 <script src="js/vendor/angular.js"></script>
-<script src="js/datepickerApp.js"></script>
+<script src="app/datetime-control/datetime-controller.js"></script>
 <script src="node_modules/moment/moment.js"></script>
 
 </body>
