@@ -16,12 +16,13 @@
             Angular Datetime Picker
         </div>
         <div class="panel-body">
-            <div class="col-xs-3">
-                <my-datetime-picker ng-model="selectedDatetime"></my-datetime-picker>
+            <div class="row">
+                <div class="col-xs-3">
+                    <my-datetime-picker ng-model="selectedDatetime"></my-datetime-picker>
+                </div>
             </div>
-
             <div class="alert alert-info" role="alert" style="margin-top: 50px;">
-                <p>You have selected the date and time <strong>{{selectedDatetime.format('LLL')}}</strong>.</p>
+                <p>You have selected the date and time: <strong>{{selectedDatetime.format('LLL')}}</strong>.</p>
             </div>
         </div>
     </div>

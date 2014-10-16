@@ -50,8 +50,9 @@ myDatetimePickerApp
             link: function (scope, element) {
                 element.datepicker({
                     format: 'dd/m/yyyy',
-                    autoclose: true
-                }).on('changeDate', function (e) {
+                    autoclose: true,
+                    todayHighlight: true
+                }).on('hide', function (e) {
                     scope.setDate(e.date);
                     scope.$apply();
                 })
@@ -63,7 +64,7 @@ myDatetimePickerApp
         return{
             restrict: 'E',
             scope: {
-                selectedDatetime:'=ngModel'
+                selectedDatetime: '=ngModel'
             },
             templateUrl: './app/datetime-control/datetime.tmp.html',
             controller: 'myDatetimePickerCtr'
